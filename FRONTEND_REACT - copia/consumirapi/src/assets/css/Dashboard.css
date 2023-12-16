@@ -1,0 +1,112 @@
+.logo-img {
+    max-width: 70px; /* Define el ancho máximo deseado para la imagen */
+    height: auto; /* Esto mantiene la proporción de la imagen */
+  }
+  
+  .carousel-img {
+    width: 50%; /* Cambia el valor para ajustar el tamaño */
+    height: auto; /* Altura automática proporcional al ancho */
+  }
+
+  #banner1 {
+    width: 100%;
+    margin-bottom: 0px;
+    position: relative;
+    max-height: 560px;
+    overflow: hidden;
+  }
+
+  #banner1 .opacidad {
+    position: relative;
+    display: inline-block;
+  }
+
+  #banner1 .opacidad::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 67, 122, 0.4);
+    pointer-events: none;
+  }
+
+  #banner1 img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #banner1 .contenedor {
+    position: absolute;
+    text-align: center;
+    width: 1200px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  #banner1 h2{
+    font-size: 80px;
+    color: white;
+  }
+
+  #banner1 h5{
+    font-size: 40px;
+    color: white;
+  }
+
+  .franja-naranja {
+    background: rgb(178,73,44);
+background: linear-gradient(90deg, rgba(178,73,44,1) 0%, rgba(255,170,71,1) 60%, rgba(255,209,155,1) 100%);
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 0px;
+    z-index: 2;
+  }
+
+  .franja-naranja h2{
+    font-weight:bold;
+    color:white;
+  }
+
+  #mobile {
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  #mobile h1{
+    font-size: 50px;
+    color: white;
+  }
+
+  #mobile h3{
+    color: white;
+  }
+
+  #mobile .marco {
+    border: 2px solid white;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    align-items: center;
+    max-width: fit-content;
+    margin-bottom: 20px;
+  }
+
+  #mobile .fa-solid {
+    font-size: 50px;
+    padding: 10px;
+  }
+
+  .contenedor-app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:end;
+  }
+
+  .banner-app{
+    background: rgb(254,45,45);
+    background: linear-gradient(0deg, rgba(254,45,45,1) 29%, rgba(254,99,45,1) 68%, rgba(254,132,45,1) 100%);
+    width: '100%'
+  }

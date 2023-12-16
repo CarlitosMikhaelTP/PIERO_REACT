@@ -1,0 +1,1 @@
+export const Apiurl = "http://localhost:8080/api/v1/auth";
