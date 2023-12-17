@@ -39,11 +39,25 @@ class Login extends React.Component {
                 const token = response.data?.token;
                 const idTipoUsuario = response.data?.idTipoUsuario;
                 const id = response.data?.id;
-
+                const idPaseador = response.data?.idPaseador;
+                const idPropietario = response.data?.idPropietario;
+    
                 if (token && idTipoUsuario && id) {
                     localStorage.setItem("token", token);
                     localStorage.setItem("idTipoUsuario", idTipoUsuario);
-            localStorage.setItem("id", id); // ALmacenando el ID del usuario
+                    localStorage.setItem("id", id); // Almacenando el ID del usuario
+    
+                    // Verificar y almacenar el ID del paseador o propietario si existe
+                    if (idPaseador) {
+                        localStorage.setItem("idPaseador", idPaseador);
+                    } else if (idPropietario) {
+                        localStorage.setItem("idPropietario", idPropietario);
+                    } else {
+                        // Si no hay ni ID de paseador ni de propietario, limpiar los datos antiguos
+                        localStorage.removeItem("idPaseador");
+                        localStorage.removeItem("idPropietario");
+                    }
+    
                     this.setState({ redirectToDashboard: true, idTipoUsuario });
                 } else {
                     this.setState({
@@ -58,7 +72,8 @@ class Login extends React.Component {
                     errorMsg: "Ha ocurrido un error inesperado."
                 });
             });
-    }
+    };
+    
 
     render() {
         if (this.state.redirectToDashboard) {

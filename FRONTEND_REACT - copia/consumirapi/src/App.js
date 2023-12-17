@@ -19,6 +19,8 @@ import Index_Dueno from './components/Index_Dueno';
 import Index_Paseador from './components/Index_Paseador';
 import UserProfile from './components/UserProfile';
 import EditUserProfileForm from './components/EditUserProfileForm';
+import EditModal from './components/fragments/EditModal';
+import PropietariosList from './components/fragments/PropietariosList';
 
 
 
@@ -33,6 +35,7 @@ function App() {
            <Route path="/editUserProfile" element={<EditUserProfileForm />} />
            <Route path='/' element={<Dashboard />} />
            <Route path='/editar' element={<Editar />} />
+           <Route path='/EditModal' element={<EditModal />} />
            <Route path='/nuevo' element={<Nuevo />} />
            <Route path='/register' element={<Register />} />
            <Route path='/tipousuarioselection' element={<TipoUsuarioSelection />} />
@@ -41,6 +44,7 @@ function App() {
            <Route path='/registrationpage' element={<RegistrationPage />} />
            <Route path='/index_dueno' element={<Index_Dueno />} />
            <Route path='/index_paseador' element={<Index_Paseador />} />
+           <Route path='/propietarios_list' element={<PropietariosList />} />
            <Route path='/buscador'></Route>
         </Routes>
       </Router>
