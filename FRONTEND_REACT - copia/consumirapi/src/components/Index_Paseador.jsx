@@ -46,12 +46,14 @@ class Index_Paseador extends React.Component {
     };
   }
 
+  // LISTA DE PROPIETARIOS
   handlePropietariosClick = () => {
     this.setState(prevState => ({
       showPropietarios: !prevState.showPropietarios, // Cambia el estado de showPropietarios al contrario del estado actual
     }));
   };
 
+  // MODAL PARA EDITAR CAMPOS DESCRIPCION
   handleModalEditarCampos = () => {
     this.setState({ showEditModal: true });
   };
@@ -138,28 +140,27 @@ class Index_Paseador extends React.Component {
     }
   };
 
-  handleCategoriaChange = (selectedCategoryId) => { // Modifica el parámetro a recibir
-    const { categorias, tarifas } = this.state;
+  handleCategoriaChange = (event) => {
+    const selectedCategoria = event.target.value;
+    const { categorias, tarifas} = this.state;
   
     // Busca la categoría seleccionada en la lista de categorías
     const selectedCategory = categorias.find(
-      (categoria) => categoria.id === parseInt(selectedCategoryId) // Asegúrate de comparar con el ID numérico
+      (categoria) => categoria.nombre === selectedCategoria
     );
   
-    // Obtiene el nombre de la categoría y su tarifa correspondiente
-    const selectedCategoryName = selectedCategory ? selectedCategory.nombre : '';
-    const tarifa = tarifas[selectedCategoryName] || '';
+    // Obtiene el ID y tarifa correspondiente a la categoría seleccionada
+    const selectedCategoryId = selectedCategory ? selectedCategory.id : '';
+    const tarifa = tarifas[selectedCategoria] || '';
   
     this.setState((prevState) => ({
-      selectedCategoria: selectedCategoryId, // Establece el ID de la categoría seleccionada
+      selectedCategoria,
       formData: {
         ...prevState.formData,
-        idCategoria: selectedCategoryId,
-        tarifa,
+        idCategoria: selectedCategoryId, // Actualiza el ID de la categoría en el formulario
+        tarifa, // Actualiza la tarifa en el formulario
       },
-    }), () => {
-      console.log('formData:', this.state.formData);
-    });
+    }));
   };
   
   
