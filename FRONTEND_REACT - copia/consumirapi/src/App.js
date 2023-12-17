@@ -8,6 +8,7 @@ import { BrowserRouter as Router , Routes , Route} from 'react-router-dom'
 import Login from './components/Login';
 // Impotamos componente Dashboard
 import Dashboard from './components/Dashboard';
+import Nosotros from './components/Nosotros';
 import Editar from './components/Editar';
 import Nuevo from './components/Nuevo';
 import Register from './components/Register';
@@ -28,19 +29,20 @@ function App() {
     <React.Fragment>
       <Router>
         <Routes>
+           <Route path='/' element={<Dashboard />} />
+           <Route path='/nosotros' element={<Nosotros />} />
            <Route path='/login' element={<Login />} />
+           <Route path='/register' element={<Register />} />
+           <Route path='/index_dueno' element={<Index_Dueno />} />
+           <Route path='/index_paseador' element={<Index_Paseador />} />
            <Route path='/userProfile' element={<UserProfile />} />
            <Route path="/editUserProfile" element={<EditUserProfileForm />} />
-           <Route path='/' element={<Dashboard />} />
            <Route path='/editar' element={<Editar />} />
            <Route path='/nuevo' element={<Nuevo />} />
-           <Route path='/register' element={<Register />} />
            <Route path='/tipousuarioselection' element={<TipoUsuarioSelection />} />
            <Route path='/usertypeselection' element={<UserTypeSelection />} />
            <Route path='/registerform' element={<RegisterForm />} />
            <Route path='/registrationpage' element={<RegistrationPage />} />
-           <Route path='/index_dueno' element={<Index_Dueno />} />
-           <Route path='/index_paseador' element={<Index_Paseador />} />
            <Route path='/buscador'></Route>
         </Routes>
       </Router>

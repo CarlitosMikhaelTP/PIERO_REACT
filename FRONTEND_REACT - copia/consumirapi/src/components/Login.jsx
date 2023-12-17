@@ -6,6 +6,7 @@ import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 import logo from '../assets/css/img/perro.png';
 import { Apiurl } from '../services/apirest';
+import foto1 from '../assets/css/img/foto1.jpeg'  
 
 class Login extends React.Component {
     state = {
@@ -68,25 +69,51 @@ class Login extends React.Component {
 
         return (
             <React.Fragment>
-                <div className="row" style={{ width: '100%' }}>
-                <div className="wrapper fadeInDown col-12">
-                    <div id="formContent">
-                        <div className="fadeIn first">
-                            <img src={logo} id="icon" alt="User Icon" />
+    <div className="row justify-content-center" style={{ width: '100%' }}>
+          <div className="col-md-8">
+            <div className="wrapper">
+              <div className="row no-gutters sombra fadeInDown mt-5">
+
+              <div className="col-md-5 d-flex align-items-stretch">
+                  <div className="info-wrap w-100 p-5 img" style={{ backgroundImage: `url(${foto1})`}}></div>
+                </div>
+                
+                <div className="col-md-7">
+                  <div className="contact-wrap w-100 p-md-5 p-4">
+                  <h3 className="mb-4">Ingresa</h3>
+                    <form  id="contactForm" name="contactForm" class="contactForm" onSubmit={this.manejadorSubmit}>
+                      <div className="row">
+
+                        <div className="col-md-10">
+                          <div data-mdb-input-init className="form-group has-validation">
+                          <input type="text" className="form-control" name="email" placeholder="Ingresa tu Email" onChange={this.manejadorChange} />
+                          </div>
                         </div>
-                        <form onSubmit={this.manejadorSubmit}>
-                            <input type="text" className="fadeIn second" name="email" placeholder="Ingresa tu Email" onChange={this.manejadorChange} />
-                            <input type="password" className="fadeIn third" name="password" placeholder="Contraseña" onChange={this.manejadorChange} />
-                            <input type="submit" className="fadeIn fourth" value="ENTRAR" onClick={this.manejadorBoton} />
-                        </form>
-                        {this.state.error === true &&
+                        <div className="col-md-10">
+                          <div className="form-group">
+                          <input type="password" className="form-control" name="password" placeholder="Contraseña" onChange={this.manejadorChange} />
+                          </div>
+                        </div>
+                        <div className="col-md-16">
+                          <div className="form-group">
+                          <input type="submit" className="btn btn-primary" value="ENTRAR" onClick={this.manejadorBoton} />
+                            <div className="submitting"></div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </form>
+                    {this.state.error === true &&
                             <div className="alert alert-danger" role="alert">
                                 {this.state.errorMsg}
                             </div>
                         }
-                    </div>
+                  </div>
                 </div>
-                </div>
+              </div>
+            </div>
+          </div>
+        </div>
             </React.Fragment>
         );
     }

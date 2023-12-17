@@ -10,7 +10,10 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+import foto2 from '../assets/css/img/foto2.jpg';
 import logo from '../assets/css/img/Logo.jpeg';
+import google_play from '../assets/css/img/google_play.png'
 import carrusel1 from '../assets/css/img/perro1.jpg';
 import carrusel2 from '../assets/css/img/perro2.jpg';
 import carrusel3 from '../assets/css/img/perro3.jpg';
@@ -25,6 +28,7 @@ import iconoFace from '../assets/css/img/iconoFace.jpg';
 import IconoCelular from '../assets/css/img/celular.jpeg';
 import Navbar from "./fragments/Navbar";
 import NewNavbar from "./fragments/NewNavbar";
+import Footer from "./fragments/Footer"
 
 
 //Imporando clases adicionales
@@ -35,6 +39,8 @@ import '../assets/styles/magnific-popup.css';
 import '../assets/styles/bootstrap-datepicker.css';
 import '../assets/styles/flaticon.css';
 import '../assets/styles/style.css';
+import '../assets/css/superboton.css';
+import '../assets/css/register.css';
 
 import '../assets/css/Dashboard.css';
 import { initMDB, Carousel } from 'mdb-ui-kit'; // Importa initMDB y el componente Carousel de mdb-ui-kit
@@ -57,18 +63,17 @@ class Dashboard extends React.Component {
             <img src={banner1} class="d-block" alt="" />
           </div>
           <div className="contenedor">
+            <div style={{backgroundColor:'#fd8e0fa9'}}>
             <h2>UYWALKY LLEGÓ A PERÚ</h2>
+            
             <h5>La tranquilidad de tu mascota es nuestra prioridad</h5>
+            </div>
           </div>
         </section>
 
-      {/* ómo funciona UyWalky */}
+      {/* Cómo funciona UyWalky */}
 
-        <div class="franja-naranja">
-          <h2>¿CÓMO FUNCIONA UYWALKY?</h2>
-        </div>
-
-        <section class="ftco-section ftco-no-pt ftco-intro" style={{marginTop:'150px'}}>
+        <section class="ftco-no-pt ftco-intro" style={{marginTop:'35px', marginBottom:'40px'}}>
           <div class="container">
             <div class="row">
 
@@ -91,7 +96,7 @@ class Dashboard extends React.Component {
                   </div>
                   <div class="media-body">
                     <h3 class="heading">RESERVA</h3>
-                    <p>Encuentra al cuidador adecuado para tu perro y paga online para contar con la cobertura veterinaria</p>
+                    <p>Encuentra al cuidador ideal y reserva un paseo con tus condiciones</p>
                   </div>
                 </div>
               </div>
@@ -102,8 +107,8 @@ class Dashboard extends React.Component {
                     <span class="flaticon-blind"></span>
                   </div>
                   <div class="media-body">
-                    <h3 class="heading">RELÁJATE</h3>
-                    <p>Tu perro se divertirá y estará en familia y tú recibirás fotografías regularmente</p>
+                    <h3 class="heading">LISTO</h3>
+                    <p>Tu mascota estará en buenas manos mientras no estás</p>
                   </div>
                 </div>
               </div>
@@ -112,49 +117,83 @@ class Dashboard extends React.Component {
           </div>
         </section>
 
-        <div class="franja-naranja">
-          <h2>BENEFICIOS DE UYWALKY</h2>
+         {/* BENEFICIOS POR USAR UyWalky */}
 
+         {/*
+         <div class="franja-naranja">
+          <h2 style={{textDecoration:'underline'}}>BENEFICIOS DE UYWALKY</h2>
+          </div>
+
+           */}
+           
+           <Link to="/usertypeselection" className="nav-link active">
+            <div className="centrado">
+              <button class="btn draw-border">UNETE A UYWALKY</button>
+            </div>
+            </Link>
+
+           {/* banner de servicios */}
+
+          <section id="banner2">
+
+          <div className="contenedor">
+        <div className="row" style={{width:'100%'}}>
+          <div className="col-md-5"></div>
+
+          <div className="col-md-7">
           <div className="container-fluid">
-            {/* BENEFICIOS POR USAR UyWalky */}
             <div className="row px-5">
-              <div className="row col-md-12 mt-2">
-              </div>
-              <div className="col-md-3 text-center py-4">
+
+              <div className="col-md-6 text-center py-4">
                 <div className="row py-2">
-                  <img src={iconoWsp} class="d-block w-25 mx-auto" alt="Canyon at Nigh" />
+                  <div style={{fontSize:'50px', color:'#FE2D2D'}} >
+                    <i class="fa-solid fa-users d-block w-25 mx-auto"></i></div>
                 </div>
-                <div className="row">
-                  <h4>+235.000 opiniones excelentes de otros dueños de perros</h4>
-                </div>
-              </div>
-              <div className="col-md-3 text-center py-4">
-                <div className="row py-2">
-                  <img src={iconoLinkedin} class="d-block w-25 mx-auto" alt="Canyon at Nigh" />
-                </div>
-                <div className="row">
-                  <h4>Cobertura veterinaria con cada reserva</h4>
+                <div className="row marco2">
+                  <h4 style={{color:'white'}}>+235.000 opiniones excelentes de otros dueños de perros</h4>
                 </div>
               </div>
-              <div className="col-md-3 text-center py-4">
+              <div className="col-md-6 text-center py-4">
                 <div className="row py-2">
-                  <img src={iconoFace} class="d-block w-25 mx-auto" alt="Canyon at Nigh" />
+                <div style={{fontSize:'50px', color:'#FE2D2D'}} >
+                    <i class="fa-solid fa-map-location-dot d-block w-25 mx-auto"></i></div>
                 </div>
-                <div className="row">
-                  <h4>Cancelaciones gratuitas y garantía de devolución</h4>
+                <div className="row marco2">
+                  <h4 style={{color:'white'}}>Mira donde está tu mastoca en tiempo real</h4>
                 </div>
               </div>
-              <div className="col-md-3 text-center py-4">
+              </div>
+              <div className="row px-5">
+
+              <div className="col-md-6 text-center py-4">
                 <div className="row py-2">
-                  <img src={iconoYoutube} class="d-block w-25 mx-auto" alt="Canyon at Nigh" />
+                <div style={{fontSize:'50px', color:'#FE2D2D'}} >
+                    <i class="fa-solid fa-shield-heart d-block w-25 mx-auto"></i></div>
                 </div>
-                <div className="row">
-                  <h4>Soporte y Ayuda de nuestro equipo de Gudog</h4>
+                <div className="row marco2">
+                  <h4 style={{color:'white'}}>Seguridad garantizada para tu mascota</h4>
+                </div>
+              </div>
+              <div className="col-md-6 text-center py-4">
+                <div className="row py-2">
+                <div style={{fontSize:'50px', color:'#FE2D2D'}} >
+                    <i class="fa-regular fa-circle-check d-block w-25 mx-auto"></i></div>
+                </div>
+                <div className="row marco2">
+                  <h4 style={{color:'white'}}>Super intuitivo y fácil de usar</h4>
                 </div>
               </div>
             </div>
           </div>
+          </div>
+
         </div>
+        </div>
+
+        <div className="opacidad">
+            <img src={foto2} class="d-block " alt=""/>
+          </div>
+        </section>
 
       {/* PREGUNTAS FRECUENTES */}
 
@@ -330,7 +369,9 @@ class Dashboard extends React.Component {
       <h3>Recibe fotos y <br />actualizaciones</h3>
       </div></div></div>
       </div>
-
+      <div id="mobile" className="marco-container d-flex justify-content-end">
+      <img src={google_play} alt="" style={{width:'300px'}}/>
+      </div>
     </div>
   </div>
 </div>
@@ -339,43 +380,7 @@ class Dashboard extends React.Component {
 <br />
 <br />
 <br />
-
-  <footer className="py-3 my-4 footer">
-    <ul className="nav justify-content-center pb-3 mb-3 container">
-      <li className="nav-item"><a href="#" className="nav-link px-2 footer-heading">Home</a></li>
-      <li className="nav-item"><a href="#" className="nav-link px-2 footer-heading">Features</a></li>
-      <li className="nav-item"><a href="#" className="nav-link px-2 footer-heading">Pricing</a></li>
-      <li className="nav-item"><a href="#" className="nav-link px-2 footer-heading">FAQs</a></li>
-      <li className="nav-item"><a href="#" className="nav-link px-2 footer-heading">About</a></li>
-    </ul>
-
-    <ul className="nav justify-content-center pb-3 mb-3 container border-bottom">
-    <li className="nav-item">
-    <div className="px-3">
-      <span class="icon fa fa-map"></span>
-      <span class="text px-2">Tecsup, Santa Anita, Perú</span>
-      </div>
-      </li>
-
-      <li className="nav-item">
-      <div className="px-3">
-        <span class="icon fa fa-phone"></span>
-        <span class="text px-2">+2 392 3929 210</span>
-        </div>
-        </li>
-
-    <li className="nav-item">
-      <div className="px-3">
-      <span class="icon fa fa-paper-plane"></span>
-      <span class="text px-2">info@uywalky.com</span>
-      </div>
-      </li>
-    </ul>
-    
-    <p class="text-center">&copy; 2023 UYWALKY</p>
-  </footer>
-
-
+      <Footer></Footer>
       </React.Fragment>
     );
   }

@@ -8,7 +8,6 @@ import logo from '../assets/css/img/Logo.jpeg';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 //Imporando clases adicionales
 
 import '../assets/styles/animate.css';
@@ -21,6 +20,7 @@ import '../assets/styles/style.css';
 import '../assets/css/register.css'
 
 import NewNavbar from "./fragments/NewNavbar";
+import Footer from "./fragments/Footer"
 initMDB({ Input, Ripple });
 
 function Register() {
@@ -81,10 +81,14 @@ function Register() {
       <div className="container">
 
         <div className="row justify-content-center">
+
+          {/*
           <div className="col-md-6 text-center mb-2">
             <h2 className="heading-section">REGISTRO PARA:</h2>
             <h1>{getTipoUsuarioTexto()}</h1>
           </div>
+          */}
+
         </div>
 
         <div className="row justify-content-center">
@@ -174,6 +178,7 @@ function Register() {
       </div>
     </section>
 
+    <Footer></Footer>
     </React.Fragment>
   );
 }
