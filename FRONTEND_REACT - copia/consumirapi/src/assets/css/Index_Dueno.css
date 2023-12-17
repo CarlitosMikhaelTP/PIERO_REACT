@@ -1,0 +1,86 @@
+.saldo{
+    font-size: 25px;
+    color: #000000;
+    border-bottom: 2px solid #ff6753;
+  }
+
+  .texto1{
+    font-size: 20px;
+    color: #000000;
+  }
+
+  .texto2{
+    font-size: 40px;
+    color: #000000;
+    border-bottom: 3px solid #FEAA48;
+  }
+
+  .texto3{
+    font-size: 20px;
+    color: #000000;
+    margin-right: 15px;
+  }
+
+  .texto4{
+    font-size: 20px;
+    color: #444444;
+
+  }
+
+  .linea2{
+    border-bottom: 3px solid #ff6753;
+    margin-bottom: 10px;
+  }
+
+  .linea3{
+    border-bottom: 3px solid #FEAA48;
+    margin-bottom: 20px;
+  }
+
+  .linea4{
+    border-left: 3px solid #a1a1a1;
+    padding-left: 20px;
+  }
+  
+  .fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #212529;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .fila div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fila i {
+    margin-right: 10px;
+  }
+  
+  .fila .apodo {
+    font-size: 1.3em;
+    background-color: #FEAA48;
+  }
+  
+  .fila .calificacion {
+    font-size: 1.2em;
+  }
+  
+  .fila .tarifa {
+    font-size: 1.2em;
+    justify-content: center;
+  }
+
+  .hide{
+    display: none;
+  }
+
+  .show{
+    display: block;
+  }

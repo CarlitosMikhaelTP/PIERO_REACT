@@ -4,6 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button, Form } from 'react-bootstrap'; 
 import { useNavigate } from 'react-router-dom'; 
 
+import NavbarDueno from "./fragments/NavbarDueno"
+import Footer from "./fragments/Footer"
+
+import "../assets/css/Index_Dueno.css"
+import "../assets/css/superboton.css"
+
 const UserProfile = () => {
   const [userData, setUserData] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -65,23 +71,62 @@ const UserProfile = () => {
     setShowDeleteModal(false);
   };
 
-  return (
+  return (      
     <div>
+      <NavbarDueno></NavbarDueno>
       {userData ? (
         <div>
-          <h2>Perfil de Usuario</h2>
-          <p >Nombres: {userData.nombres}</p>
-          <p>Apellidos: {userData.apellidos}</p>
-          <p>Apodo: {userData.apodo}</p>
-          <p>Dirección: {userData.direccion}</p>
-          <p>Edad: {userData.edad}</p>
-          <p>Celular: {userData.celular}</p>
-          <p>DNI: {userData.dni}</p>
-          <p>Email: {userData.email}</p>
+          <div className='container linea4' style={{margin:'50px'}}>
+          <div style={{maxWidth:'60%'}} >
+            <h2 className='texto2'>Perfil de {userData.nombres}</h2>
+            <div className='row'>
+            <div className='col-md-6'>
+            <div className='d-flex flex-file align-items-center'>
+              <label className='texto3'>Nombres:</label>
+              <label className='texto4'>{userData.nombres}</label>
+            </div>
+            <div className='d-flex flex-file align-items-center'>
+              <label className='texto3'>Apellidos:</label>
+              <label className='texto4'>{userData.apellidos}</label>
+            </div>
+            <div className='d-flex flex-file align-items-center'>
+              <label className='texto3'>Apodo:</label>
+              <label className='texto4'>{userData.apodo}</label>
+            </div>
+            <div className='d-flex flex-file align-items-center'>
+              <label className='texto3'>Dirección:</label>
+              <label className='texto4'>{userData.direccion}</label>
+            </div>
+            </div>
+            <div className='col-md-6'>
+            <div className='d-flex flex-file align-items-center'>
+              <label className='texto3'>Edad:</label>
+              <label className='texto4'>{userData.edad}</label>
+            </div>
+            <div className='d-flex flex-file align-items-center'>
+              <label className='texto3'>Celular:</label>
+              <label className='texto4'>{userData.celular}</label>
+            </div>
+            <div className='d-flex flex-file align-items-center'>
+              <label className='texto3'>DNI:</label>
+              <label className='texto4'>{userData.dni}</label>
+            </div>
+            <div className='d-flex flex-file align-items-center'>
+              <label className='texto3'>Email:</label>
+              <label className='texto4'>{userData.email}</label>
+            </div>
+            </div>
+            </div>
 
-          {/* Botón para abrir el modal */}
-          <button variant="primary"  onClick={handleOpenModal}>Editar Perfil</button>
-          <button variant="danger" onClick={() => setShowDeleteModal(true)}>Eliminar cuenta</button>
+            <div className='linea2'></div>
+            {/* Botón para abrir el modal */}
+            <div className='' style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <button className='boton3' variant="primary" onClick={handleOpenModal}>Editar Perfil</button>
+          <br />
+          <button className='boton4' variant="danger" onClick={() => setShowDeleteModal(true)}>Eliminar cuenta</button>
+          </div>
+          </div>
+          </div>
           {/* Modal */}
           {showModal && (
           <Modal show={showModal} onHide={handleCloseModal}>
@@ -236,6 +281,7 @@ const UserProfile = () => {
       ) : (
         <p>Cargando datos del usuario...</p>
       )}
+      <Footer></Footer>
     </div>
   );
 };
