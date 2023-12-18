@@ -22,6 +22,10 @@ import UserProfile from './components/UserProfile';
 import EditUserProfileForm from './components/EditUserProfileForm';
 import EditModal from './components/fragments/EditModal';
 import PropietariosList from './components/fragments/PropietariosList';
+import ModalRegistroPropietario from './components/fragments/ModalRegistroPropietario';
+import ModalActualizarPropietario from './components/fragments/ModalActualizarPropietario';
+import Modalll from './components/fragments/Modalll';
+import PaseadoresList from './components/fragments/PaseadoresList';
 
 
 
@@ -49,6 +53,10 @@ function App() {
            <Route path='/index_dueno' element={<Index_Dueno />} />
            <Route path='/index_paseador' element={<Index_Paseador />} />
            <Route path='/propietarios_list' element={<PropietariosList />} />
+           <Route path='/registerPropietario' element={<ModalRegistroPropietario />} />
+           <Route path='/actualizarPropietario' element={<ModalActualizarPropietario />} />
+           <Route path='/paseadoresList' element={<PaseadoresList />} />
+           <Route path='/modal' element={<Modalll/>} />
            <Route path='/buscador'></Route>
         </Routes>
       </Router>
