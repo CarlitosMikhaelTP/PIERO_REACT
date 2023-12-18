@@ -5,6 +5,10 @@ import { Modal, Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EditModal from './fragments/EditModal'; 
 import PropietariosList from "./fragments/PropietariosList";
+import NavbarPaseador from './fragments/NavbarPaseador'
+import Footer from './fragments/Footer'
+import '../assets/css/Index_Dueno.css'
+import mapa1 from '../assets/css/img/mapa1.jpg'
 
 class Index_Paseador extends React.Component {
   constructor(props) {
@@ -43,19 +47,22 @@ class Index_Paseador extends React.Component {
       showSuccessModal: false,
       showEditModal: false, 
       showPropietarios: false,
+      TextVisible: false,
     };
   }
+
+  // VISTA DEL SALDO
+  toggleText = () => {
+    this.setState((prevState) => ({
+      TextVisible: !prevState.TextVisible,
+    }));
+  };
 
   // LISTA DE PROPIETARIOS
   handlePropietariosClick = () => {
     this.setState(prevState => ({
       showPropietarios: !prevState.showPropietarios, // Cambia el estado de showPropietarios al contrario del estado actual
     }));
-  };
-
-  // MODAL PARA EDITAR CAMPOS DESCRIPCION
-  handleModalEditarCampos = () => {
-    this.setState({ showEditModal: true });
   };
 
     async componentDidMount() {
@@ -216,36 +223,12 @@ class Index_Paseador extends React.Component {
 
 
 
-  renderPaseadorInfo() {
-    const { paseadorInfo, loadingPaseadorInfo } = this.state;
-
-    if (loadingPaseadorInfo) {
-      return <div>Cargando información del paseador...</div>;
-    }
-
-    if (!paseadorInfo) {
-      return <div>No se encontró información del paseador.</div>;
-    }
-    return (
-      <div>
-        <h2>Información del Paseador</h2>
-        <p>Nombre: {paseadorInfo.nombres}</p>
-        <p>Apellidos: {paseadorInfo.apellidos}</p>
-        <p>Categoría: {paseadorInfo.categoriaNombre}</p>
-        <p>Descripción: {paseadorInfo.descripcion}</p>
-        <p>Experiencia: {paseadorInfo.experiencia}</p>
-        <p>Tarifa: {paseadorInfo.tarifa}</p>
-        <p>Saldo: {paseadorInfo.saldo}</p>
-        {/* Mostrar otros detalles del paseador según la estructura de la respuesta */}
-      </div>
-    );
-  }
-
 
     //creamos metodo render que retornara los elementos html
     render(){
       const { categorias, selectedCategoria, formData, showModal, profileCreated, showPropietarios } = this.state;
       if (!profileCreated || showModal){
+
         return(
           <React.Fragment>
               <Modal show={showModal || !profileCreated} onHide={this.handleCloseModal}>
@@ -337,58 +320,88 @@ class Index_Paseador extends React.Component {
                               </Form>
                             </Modal.Body>
                       </Modal>
+          <Footer></Footer>
       </React.Fragment>
         );
     }
     // Si el perfil ya está creado, no mostrar el formulario, solo mostrar la página normal
+
+    //Contenido de la página
       return(
         <React.Fragment>
-            <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
-              <a className="navbar-brand" href="#">Mi Sitio</a>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav ml-auto">
-                  <li className="nav-item">
-                    <Link to="/usertypeselection" className="nav-link" href="#">Registrarme</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/login" className="nav-link" >Iniciar Sesión</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/userProfile">Perfil</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/userProfile">Buscar Clientes</Link>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Registrar Mascota</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Buscar Paseador</a>
-                  </li>
-                </ul>
-              </div>
-             </nav>
-             <hr />
-             <hr />
-        {/* Mostrar automáticamente la información del paseador */}
-        {this.renderPaseadorInfo()}
-        {/* ...resto del contenido del Index_Paseador... */}
-        {/* Sección para editar ubicación y disponibilidad */}
+          <NavbarPaseador></NavbarPaseador>
+
+          <div className="d-flex flex-nowrap">
+      <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style={{ width: '220px' }}>
+        <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <div style={{marginLeft:'10px', marginRight:'10px', fontSize:'25px'}}>
+            <i class="fa-solid fa-user"></i></div>
+          <span className="fs-4">Paseador</span>
+        </a>
+        <hr/>
+        <Link className="navbar-brand" to="/" style={{marginLeft: '10px'}}>
+	    	<a class="navbar-brand" href=""><i class="fa-solid fa-angle-left"></i> Página principal</a>
+          </Link>
+          <hr/>
+        <ul className="nav nav-pills flex-column mb-auto">
+        <li className="nav-item">
+            <a href="#" className="nav-link active" aria-current="page">
+            <i class="fa-solid fa-paw fa-flip" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
+              Menu
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-link text-white" aria-current="page">
+            <i class="fa-solid fa-address-card" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
+              Mi Información
+            </a>
+          </li>
+        </ul>
+      </div>
+
+        <div className="mt-3" style={{width:'100%'}}>
+  <div className="container-fluid">
+    <div className="row px-1">
+
+          <div className="col-md-8">
+            {/* Sección para editar ubicación y disponibilidad */}
           <div className="edit-section">
-          <h3>Editar Información</h3>
+          <div className="row align-items-center justify-content-between">
+            <div className="col">
+          <h3>Actualiza tu ubicación</h3>
+          </div>
+
+          <div className="col">
+          <div className="d-flex flex-fill align-items-center text-center">
+            <button className="ojito" onClick={this.toggleText}>
+            {this.state.TextVisible ? <i class="fa-solid fa-eye-slash fa-beat"></i> : <i class="fa-solid fa-eye fa-beat"></i>}
+            </button>
+            <label className="saldo">Saldo: S/.</label>
+            <label className={`saldo ${this.state.TextVisible ? 'show' : 'hide'}`}>
+            {formData.saldo}
+            </label>
+          </div>
+          </div>
+          </div>
+          
           <Form>
             <Form.Group controlId="formUbicacion">
-              <Form.Label>Ubicación</Form.Label>
+              <div className="row align-items-center" style={{width:'100%'}}>
+              <div className="col-md-10">
               <Form.Control
                 type="text"
                 placeholder="Ingrese la ubicación"
                 name="ubicacion"
                 value={this.state.formData.ubicacion || ''} // Asegúrate de tener un valor por defecto ''
-                onChange={this.handleInputChange}
-              />
+                onChange={this.handleInputChange} style={{width:'100%'}}/>
+              </div>
+
+              <div className="col-md-2">
+              <Button variant="primary" onClick={this.handleEditSubmit}>
+              Actualizar
+            </Button>
+            </div>
+            </div>
             </Form.Group>
 
             <Form.Group controlId="formDisponibilidad">
@@ -400,11 +413,12 @@ class Index_Paseador extends React.Component {
                onChange={this.handleInputChange}
               />
             </Form.Group>
-
-            <Button variant="primary" onClick={this.handleEditSubmit}>
-              Actualizar
-            </Button>
           </Form>
+        </div>
+
+        <div className="text-center py-3">
+        <img src={mapa1} alt="" style={{width:'100%'}}/>
+      </div>
         </div>
 
         <Modal show={this.state.showSuccessModal} onHide={() => this.setState({ showSuccessModal: false })}>
@@ -421,24 +435,21 @@ class Index_Paseador extends React.Component {
           </Modal.Footer>
          </Modal>
 
-         <Button variant="primary" onClick={this.handleModalEditarCampos}>
-          Editar Campos
-        </Button>
-
-        {/* Mostrar el modal de edición */}
-        <EditModal
-          show={this.state.showEditModal}
-          handleClose={() => this.setState({ showEditModal: false })}
-          idPaseador={localStorage.getItem('idPaseador')}
-        />
-
+        <div className="col-md-4">
       <div>
-        {/* ... Tu código existente ... */}
         <Button variant="primary" onClick={this.handlePropietariosClick}>
           {showPropietarios ? 'Ocultar Propietarios' : 'Mostrar Propietarios'}
         </Button>
         {showPropietarios && <PropietariosList />} {/* Renderiza PropietariosList si showPropietarios es true */}
       </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+      </div>
+      <Footer></Footer>
          </React.Fragment>
     );
   }

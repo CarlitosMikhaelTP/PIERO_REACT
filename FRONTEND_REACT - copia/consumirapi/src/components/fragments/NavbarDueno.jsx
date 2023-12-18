@@ -8,7 +8,7 @@ export default class App extends Component{
     render(){
       return(
         
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light">
+        <nav class="navbar navbar-expand-lg ftco-navbar-light">
 	    <Link className="navbar-brand" to="/index_dueno" style={{marginLeft: '20px'}}>
 	    	<a class="navbar-brand" href="">
 			<img src={logo} id="icon" alt="User Icon" className="logo-img rounded-pill mr-3" />UYWALKY</a>

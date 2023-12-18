@@ -20,7 +20,6 @@ import '../assets/css/Index_Dueno.css'
 import '../assets/css/sidebars.css'
 import '../assets/js/sidebars.js'
 import '../assets/css/superboton.css'
-
 import '../assets/js/adicionales.js'
 
 //Crear una clase que herede de React Component
@@ -61,26 +60,8 @@ class Index_Dueno extends React.Component{
           </li>
           <li className="nav-item">
             <a href="#" className="nav-link text-white" aria-current="page">
-            <i class="fa-solid fa-road-circle-check" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
-              Preferencias
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link text-white">
-            <i class="fa-solid fa-star" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
-              Calificación
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link text-white">
-            <i class="fa-solid fa-comment-dots" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
-              Comentarios
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link text-white">
-            <i class="fa-solid fa-location-dot" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
-              Ubicación
+            <i class="fa-solid fa-address-card" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
+              Mi Información
             </a>
           </li>
         </ul>
@@ -89,9 +70,6 @@ class Index_Dueno extends React.Component{
 	    	<a class="navbar-brand" href=""><i class="fa-solid fa-angle-left"></i> Página principal</a>
           </Link>
       </div>
-
-
-      {/* Contenido de la derecha */}
 
       <div className="">
 <div className="row" style={{width:'100%'}}>

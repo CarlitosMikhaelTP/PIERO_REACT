@@ -78,7 +78,7 @@ const UserProfile = () => {
         <div>
           <div className='container linea4' style={{margin:'50px'}}>
           <div style={{maxWidth:'60%'}} >
-            <h2 className='texto2'>Perfil de {userData.nombres}</h2>
+            <h2 className='texto2'>CUENTA de {userData.nombres}</h2>
             <div className='row'>
             <div className='col-md-6'>
             <div className='d-flex flex-file align-items-center'>

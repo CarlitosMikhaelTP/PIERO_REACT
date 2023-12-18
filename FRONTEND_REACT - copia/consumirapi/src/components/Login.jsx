@@ -6,7 +6,8 @@ import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { Apiurl } from '../services/apirest';
-import foto1 from '../assets/css/img/foto1.jpeg'  
+import foto1 from '../assets/css/img/foto1.jpeg' 
+import NewNavbar from './fragments/NewNavbar'
 
 class Login extends React.Component {
     state = {
@@ -84,6 +85,7 @@ class Login extends React.Component {
 
         return (
             <React.Fragment>
+                <NewNavbar></NewNavbar>
     <div className="row justify-content-center" style={{ width: '100%' }}>
           <div className="col-md-8">
             <div className="wrapper">

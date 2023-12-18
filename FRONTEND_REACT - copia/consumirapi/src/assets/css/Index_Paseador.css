@@ -1,0 +1,56 @@
+.fila2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .fila2 .col-md-2 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fila2 div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fila2 i {
+    font-size: 1.1em;
+    margin-right: 10px;
+  }
+  
+  .fila2 .nombre {
+    font-size: 1em;
+    /*
+    background-color: #FEAA48;
+    */
+  }
+  
+  .fila2 .ubicacion {
+    font-size: 1em;
+    /*
+    justify-content: space-between;
+    */
+  }
+
+  .fila2 .calificacion{
+    font-size: 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
+  
+  .fila2 .comentario {
+    font-size: 1em;
+    /*
+    justify-content: center;
+    */
+  }

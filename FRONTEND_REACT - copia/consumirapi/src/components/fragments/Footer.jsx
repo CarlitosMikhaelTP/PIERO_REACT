@@ -16,21 +16,21 @@ export default class App extends Component{
     </ul>
 
     <ul className="nav justify-content-center pb-3 mb-3 container border-bottom">
-    <li className="nav-item">
+    <li className="nav-item text-white">
     <div className="px-3">
       <span class="icon fa fa-map"></span>
       <span class="text px-2">Tecsup, Santa Anita, Perú</span>
       </div>
       </li>
 
-      <li className="nav-item">
+      <li className="nav-item text-white">
       <div className="px-3">
         <span class="icon fa fa-phone"></span>
         <span class="text px-2">+51 999 999 999</span>
         </div>
         </li>
 
-    <li className="nav-item">
+    <li className="nav-item text-white">
       <div className="px-3">
       <span class="icon fa fa-paper-plane"></span>
       <span class="text px-2">info@uywalky.com</span>

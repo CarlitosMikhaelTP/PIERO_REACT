@@ -119,7 +119,7 @@ class Nosotros extends React.Component {
 
           <div className="contenedor2 row">
 
-              <div className="text-center col-md-7">
+              <div className="text-center col-md-7" style={{padding: '40px'}}>
                 <div className="row py-2">
                   <div style={{fontSize:'50px', color:'#FFF'}} >
                     <p>MISION</p>
@@ -135,7 +135,7 @@ class Nosotros extends React.Component {
                 </div>
               </div>
 
-              <div className="text-center col-md-5">
+              <div className="text-center col-md-5" style={{padding: '40px'}}>
                 <div className="row py-2">
                   <div style={{fontSize:'50px', color:'#FFF'}} >
                     <p>VISION</p>
