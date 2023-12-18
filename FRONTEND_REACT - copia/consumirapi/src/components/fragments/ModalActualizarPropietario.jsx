@@ -25,6 +25,10 @@ const ModalActualizarPropietario = ({ show, handleClose, idPropietario }) => {
     setFoto(file);
   };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d15f7929bfa795f0a64150d72825dcafb49efbca
   const handleSubmit = async () => {
     const endpoint = `http://localhost:8080/api/v1/propietario/edit/${idPropietario}`;
     console.log('Datos a enviar al servidor:', { comentario, preferenciasPaseo, saldo });
@@ -46,6 +50,11 @@ const ModalActualizarPropietario = ({ show, handleClose, idPropietario }) => {
           },
         });
       }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d15f7929bfa795f0a64150d72825dcafb49efbca
   
       handleClose(); // Cerrar el modal después de la actualización exitosa
     } catch (error) {

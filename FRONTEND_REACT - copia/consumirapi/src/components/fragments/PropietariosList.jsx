@@ -46,12 +46,38 @@ return (
               <div className='row'>
               <Card.Title className="font-weight-bold">{propietario.nombres}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted font-italic">{propietario.apellidos}</Card.Subtitle>
+<<<<<<< HEAD
             <div className="ubicacion"><i class="fa-solid fa-location-dot"></i>{propietario.ubicacion}</div>
             <div className="comentario"><i class="fa-solid fa-comment-dots"></i>{propietario.comentario}</div>
             </div>
             </div>
         </div>
         </div>
+=======
+            <Card.Text>
+              <span className="fw-bold">Saldo:</span> {propietario.saldo}
+              <br />
+              <span className="fw-bold">Calificación:</span> {propietario.calificacion}
+              <br />
+              <span className="fw-bold">Ubicación:</span> {propietario.ubicacion}
+              <br />
+              {propietario.foto && (
+                <div>
+                  <p>Foto:</p>
+                  <img src={`http://localhost:8080/api/v1/propietario/foto/${propietario.idPropietario}`} 
+                  alt="Foto del propietario" 
+                  style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover' }}/>
+                </div>
+              )}
+              <br/>
+              <span className="fw-bold">Comentario:</span> {propietario.comentario}
+              <br />
+              <span className="fw-bold">Preferencias de Paseo:</span> {propietario.preferenciasPaseo}
+              {/* Agregar otros detalles del propietario si es necesario */}
+            </Card.Text>
+            <Button variant="primary">Contactar</Button>
+          </Card.Body>
+>>>>>>> d15f7929bfa795f0a64150d72825dcafb49efbca
         </Card>
         </a>
       ))}

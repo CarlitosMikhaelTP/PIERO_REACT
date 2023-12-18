@@ -223,6 +223,42 @@ class Index_Paseador extends React.Component {
 
 
 
+<<<<<<< HEAD
+=======
+  renderPaseadorInfo() {
+    const { paseadorInfo, loadingPaseadorInfo } = this.state;
+
+    if (loadingPaseadorInfo) {
+      return <div>Cargando información del paseador...</div>;
+    }
+
+    if (!paseadorInfo) {
+      return <div>No se encontró información del paseador.</div>;
+    }
+    return (
+      <div>
+        <h2>Información del Paseador</h2>
+        <p>Nombre: {paseadorInfo.nombres}</p>
+        <p>Apellidos: {paseadorInfo.apellidos}</p>
+        <p>Categoría: {paseadorInfo.categoriaNombre}</p>
+        <p>Descripción: {paseadorInfo.descripcion}</p>
+        <p>Experiencia: {paseadorInfo.experiencia}</p>
+        {paseadorInfo.foto && (
+        <div>
+            <p>Foto:</p>
+            <img src={`http://localhost:8080/api/v1/paseador/foto/${paseadorInfo.idPaseador}`} 
+            alt="Foto del paseador" 
+            style={{ maxWidth: '100%', maxHeight: '400px', objectFit: 'cover' }}/>
+          </div>
+        )}
+        <p>Tarifa: {paseadorInfo.tarifa}</p>
+        <p>Saldo: {paseadorInfo.saldo}</p>
+        {/* Mostrar otros detalles del paseador según la estructura de la respuesta */}
+      </div>
+    );
+  }
+
+>>>>>>> d15f7929bfa795f0a64150d72825dcafb49efbca
 
     //creamos metodo render que retornara los elementos html
     render(){

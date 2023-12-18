@@ -32,6 +32,7 @@ import InfoPropietario from './components/InfoPropietario';
 
 
 
+
 function App() {
   return (
     //Usamos la etiqueta propia de React
@@ -59,6 +60,7 @@ function App() {
            <Route path='/registerPropietario' element={<ModalRegistroPropietario />} />
            <Route path='/actualizarPropietario' element={<ModalActualizarPropietario />} />
            <Route path='/paseadoresList' element={<PaseadoresList />} />
+           
            <Route path='/modal' element={<Modalll/>} />
            <Route path='/buscador'></Route>
            <Route path='/infopaseador' element={<InfoPaseador />} />

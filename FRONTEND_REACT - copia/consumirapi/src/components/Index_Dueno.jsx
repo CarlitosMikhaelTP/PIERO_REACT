@@ -147,8 +147,13 @@ handlePaseadoresClick = () => {
           style={{ maxWidth: '100%', maxHeight: '400px', objectFit: 'cover' }}/>
         </div>
       )}
+<<<<<<< HEAD
         {/* Otros detalles del propietario */}
       </div>
+=======
+      {/* Otros detalles del propietario */}
+    </div>
+>>>>>>> d15f7929bfa795f0a64150d72825dcafb49efbca
     );
   }
   

@@ -6,7 +6,11 @@ const EditModal = ({ show, handleClose, idPaseador }) => {
   const [idCategoria, setIdCategoria] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [experiencia, setExperiencia] = useState('');
+<<<<<<< HEAD
   const [foto, setFoto] = useState(null);
+=======
+  const [foto, setFoto] = useState(null); 
+>>>>>>> d15f7929bfa795f0a64150d72825dcafb49efbca
 
   const handleIdCategoriaChange = (e) => {
     console.log('Valor seleccionado:', e.target.value);
@@ -26,7 +30,11 @@ const EditModal = ({ show, handleClose, idPaseador }) => {
     const file = e.target.files[0]; // Obtiene el archivo de la lista de archivos seleccionados
     setFoto(file);
   };
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> d15f7929bfa795f0a64150d72825dcafb49efbca
   const handleSubmit = async () => {
     const endpoint = `http://localhost:8080/api/v1/paseador/edit/${idPaseador}`;
     console.log('Datos a enviar al servidor:', { idCategoria, descripcion, experiencia });
@@ -48,7 +56,11 @@ const EditModal = ({ show, handleClose, idPaseador }) => {
           },
         });
       }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> d15f7929bfa795f0a64150d72825dcafb49efbca
       handleClose(); // Cerrar el modal después de la actualización exitosa
     } catch (error) {
       console.error('Error al actualizar:', error);
