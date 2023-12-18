@@ -436,19 +436,6 @@ class Index_Paseador extends React.Component {
          </Modal>
 
         <div className="col-md-4">
-
-        <div className="text-cemter">
-        <div className="texto1" style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div style={{ alignSelf: 'flex-start' }}>
-      <label>PROPIETARIOS:</label>
-      </div>
-      <div style={{fontSize:'25px'}}>
-      <i class="fa-solid fa-dog"></i>
-      </div>
-      </div>
-      <div className="linea2"></div>
-    </div>
-
       <div>
         <Button variant="primary" onClick={this.handlePropietariosClick}>
           {showPropietarios ? 'Ocultar Propietarios' : 'Mostrar Propietarios'}

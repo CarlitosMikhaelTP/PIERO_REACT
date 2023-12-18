@@ -216,6 +216,20 @@ class InfoPaseador extends React.Component {
                     <form id="contactForm" name="contactForm" class="contactForm">
                       <div className="row">
 
+                      <div className="col-md-11 mx-auto">
+                          <div className="form-group">
+                          {paseadorInfo.foto && (
+                            <div className="">
+                                <label className="label" htmlFor="direccion">Foto:</label>
+                                <br />
+                                <img src={`http://localhost:8080/api/v1/paseador/foto/${paseadorInfo.idPaseador}`} 
+                                alt="Foto del paseador"
+                                style={{ maxWidth: '100%', maxHeight: '300px', objectFit: 'cover' }}/>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+
                       <div className="col-md-11">
                           <div className="form-group">
                             <label className="label" htmlFor="direccion">Descripción</label>

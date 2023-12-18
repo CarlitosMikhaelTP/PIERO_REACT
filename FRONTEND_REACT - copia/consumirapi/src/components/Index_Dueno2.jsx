@@ -213,28 +213,19 @@ handlePaseadoresClick = () => {
   <div className="container-fluid">
     <div className="row px-1">
 
-      <div className="col-md-8 py-3">
+      <div className="col-md-9 py-3">
       <div className="edit-section">
-      <div className="row align-items-center justify-content-between">
-          <h3>Actualiza tu ubicación</h3>
+          <h3>Editar Información</h3>
           <Form>
             <Form.Group controlId="formUbicacion">
-              <div className="row align-items-center" style={{width:'100%'}}>
-              <div className="col-md-10">
+              <Form.Label>Ubicación</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Ingrese la ubicación"
                 name="ubicacion"
                 value={this.state.formData.ubicacion || ''} // Asegúrate de tener un valor por defecto ''
-                onChange={this.handleInputChange} style={{width:'100%'}}/>
-              </div>
-
-              <div className="col-md-2">
-              <Button variant="primary" onClick={this.handleEditSubmit}>
-              Actualizar
-            </Button>
-            </div>
-            </div>
+                onChange={this.handleInputChange}
+              />
             </Form.Group>
 
             <Form.Group controlId="formDisponibilidad">
@@ -246,13 +237,16 @@ handlePaseadoresClick = () => {
                onChange={this.handleInputChange}
               />
             </Form.Group>
+
+            <Button variant="primary" onClick={this.handleEditSubmit}>
+              Actualizar
+            </Button>
           </Form>
-          </div>
         </div>
         <img src={mapa1} alt="" style={{width:'100%'}}/>
       </div>
 
-      <div className="col-md-4 py-3">
+      <div className="col-md-3 py-3">
 
       <div className="text-cemter">
         <div className="texto1" style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -266,16 +260,36 @@ handlePaseadoresClick = () => {
       <div className="linea2"></div>
     </div>
 
-    <div>
-        {/* ... Tu código existente ... */}
-        <Button variant="primary" onClick={this.handlePaseadoresClick}>
-          {showPaseadores ? 'Ocultar Paseadores' : 'Mostrar Paseadores'}
-        </Button>
-        {showPaseadores && <PaseadoresList />} {/* Renderiza PropietariosList si showPropietarios es true */}
-        <div>
-        {/* ... Otro contenido ... */}
-        {this.renderPropietarioInfo()}
+      <div className="fila">
+        <div className="row">
+        <div className="apodo"> <i class="fa-solid fa-circle-user"></i> PieroQuiroz</div>
+        <div className="calificacion"><i class="fa-solid fa-star"></i>4.3</div>
+        <div className="tarifa">S/. 15</div>
+        </div>
       </div>
+
+      <div className="fila">
+        <div className="row">
+        <div className="apodo"> <i class="fa-solid fa-circle-user"></i> Apodo</div>
+        <div className="calificacion">Calificacion</div>
+        <div className="tarifa">Tarifa</div>
+        </div>
+      </div>
+
+      <div className="fila">
+        <div className="row">
+        <div className="apodo"> <i class="fa-solid fa-circle-user"></i> Apodo</div>
+        <div className="calificacion">Calificacion</div>
+        <div className="tarifa">Tarifa</div>
+        </div>
+      </div>
+
+      <div className="fila">
+        <div className="row">
+        <div className="apodo"> <i class="fa-solid fa-circle-user"></i> Apodo</div>
+        <div className="calificacion">Calificacion</div>
+        <div className="tarifa">Tarifa</div>
+        </div>
       </div>
 
       </div>
@@ -310,6 +324,15 @@ handlePaseadoresClick = () => {
         handleClose={this.handleCloseEditarCampos}
         idPropietario={this.state.idPropietario}
       />
+
+<div>
+        {/* ... Tu código existente ... */}
+        <Button variant="primary" onClick={this.handlePaseadoresClick}>
+          {showPaseadores ? 'Ocultar Paseadores' : 'Mostrar Paseadores'}
+        </Button>
+        {showPaseadores && <PaseadoresList />} {/* Renderiza PropietariosList si showPropietarios es true */}
+      </div>
+
        {/* Agrega la llamada a la función renderPropietarioInfo() donde desees mostrar la información */}
 
     <Footer></Footer>

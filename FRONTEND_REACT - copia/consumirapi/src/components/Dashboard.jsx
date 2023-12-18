@@ -224,9 +224,10 @@ class Dashboard extends React.Component {
           <div className="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
             <div className="card-body py-3 px-0">
               <ol>
-                Creemos que todos los perros deberían ser cuidados por cuidadores cariñosos que les proporcionen 
-                atención personalizada, muchos paseos, tiempo de juego y mimos. Si buscas lo mismo para tu 
-                perro, Gudog te permite buscar, encontrar y reservar el cuidador perfecto.
+              Creemos que todos los perros deberían recibir cuidados de personas 
+              cariñosas que les brinden atención personalizada, numerosos paseos, 
+              momentos de juego y afecto. Si estás buscando lo mismo para tu perro, 
+              UyWalky te ofrece la posibilidad de buscar, descubrir y reservar al cuidador ideal.
               </ol>
             </div>
           </div>
@@ -245,13 +246,13 @@ class Dashboard extends React.Component {
           <div className="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headinTwo">
             <div className="card-body py-3 px-0">
             <ol>
-            Nos comprometemos a proporcionar un entorno seguro para la comunidad Gudog. Todos los cuidadores 
-            pasan por un estricto proceso de selección con el equipo de confianza y seguridad de Gudog, y 
-            solo el 15% de los solicitantes son finalmente aprobados. Los perfiles de Gudog muestran la 
-            experiencia, las cualificaciones, el entorno del hogar y la zona del cuidador, así como las 
-            calificaciones y los comentarios de otros dueños/as de perros. Las reservas realizadas a través 
-            de Gudog también están cubiertas por nuestros Términos de Servicio, incluyendo la atención 
-            veterinaria para proteger a tu perro en caso de accidente o emergencia durante cualquier reserva.
+            Nos comprometemos a proporcionar un entorno seguro para la comunidad UyWalky. 
+            Todos los cuidadores pasan por un riguroso proceso de selección con el equipo de 
+            confianza y seguridad de UyWalky. Los perfiles de UyWalky muestran la experiencia, las cualificaciones, el 
+            entorno del hogar y la zona del cuidador, así como las calificaciones y los comentarios 
+            de otros dueños/as de perros. Las reservas realizadas a través de UyWalky también están 
+            cubiertas por nuestros Términos de Servicio, que incluyen atención veterinaria para proteger 
+            a tu perro en caso de accidente o emergencia durante cualquier reserva.
               </ol>
             </div>
           </div>
@@ -292,12 +293,15 @@ class Dashboard extends React.Component {
           <div className="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingFour">
             <div className="card-body py-3 px-0">
               <ol>
-              Una vez que hayas encontrado al cuidador perfecto para tu perro, Gudog hará que el pago 
-              sea sencillo. Aceptamos las principales tarjetas de crédito / débito, SOFORT y Giropay. 
-              El importe se cargará una vez que se confirme la reserva y podrás hablar y conocer al 
-              cuidador antes de la reserva. Todas las reservas de Gudog incluyen un reembolso del 100% 
-              en cualquier momento hasta 3 días antes del inicio de la reserva.¡Nunca realices el pago 
-              en efectivo! Esto pone en riesgo a ti y a tu perro y vulnera los Términos de servicio de Gudog.
+              Una vez que hayas encontrado al 
+              cuidador perfecto para tu perro, UyWalky hará que 
+              el pago sea sencillo. Aceptamos las principales tarjetas de 
+              crédito/débito, SOFORT y Giropay. El importe se cargará una vez 
+              que se confirme la reserva, y tendrás la oportunidad de hablar y conocer 
+              al cuidador antes de la reserva. Todas las reservas de UyWalky incluyen un 
+              reembolso del 100% en cualquier momento hasta 3 días antes del inicio de la reserva. 
+              ¡Nunca realices el pago en efectivo! Esto pone en riesgo a ti y a tu perro y vulnera 
+              los Términos de Servicio de UyWalky.
               </ol>
             </div>
           </div>
@@ -317,7 +321,7 @@ class Dashboard extends React.Component {
             <div className="card-body py-3 px-0">
               <ol>
               ¡Sí, por supuesto! Entendemos que los planes pueden cambiar, por eso todas las reservas de 
-              Gudog tienen un reembolso del 100% en cualquier momento hasta 3 días antes del inicio de una 
+              UyWalky tienen un reembolso del 100% en cualquier momento hasta 3 días antes del inicio de una 
               reserva.
               </ol>
             </div>

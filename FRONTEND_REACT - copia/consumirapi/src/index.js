@@ -7,7 +7,7 @@ import Mapa from './Mapa';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Mapa />
+    <App />
   </React.StrictMode>
 );
 

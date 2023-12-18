@@ -78,7 +78,7 @@ const Mapa = () => {
   return (
     <div style={{ display: "flex", height: "100%" }}>
       <Wrapper
-        apiKey="AIzaSyBHi9P06bPKhA84ymXb2gJvuLDBSEswdGU"
+        apiKey="AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"
         render={render}
       >
         <Map
@@ -201,6 +201,5 @@ function useDeepCompareMemoize(value) {
 function useDeepCompareEffectForMaps(callback, dependencies) {
   React.useEffect(callback, dependencies.map(useDeepCompareMemoize))
 }
-
 
 export default Mapa;

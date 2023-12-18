@@ -25,7 +25,6 @@ const PropietariosList = () => {
 return (
   <div className="d-flex flex-wrap" style={{width:'100%'}}>
       {propietarios.map(propietario => (
-        <a href='#' style={{textDecoration:'none'}}>
         <Card key={propietario.id} style={{ width: '100%', margin: '10px' }} className='sombra2'>
           
           <div className="fila2">
@@ -34,6 +33,7 @@ return (
             <div className="col-md-4">
             {propietario.foto && (
                 <div>
+                  <p>Foto:</p>
                   <img src={`http://localhost:8080/api/v1/propietario/foto/${propietario.idPropietario}`} 
                   alt="Foto del propietario" 
                   style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover' }}/>
@@ -53,7 +53,6 @@ return (
         </div>
         </div>
         </Card>
-        </a>
       ))}
     </div>
 );
