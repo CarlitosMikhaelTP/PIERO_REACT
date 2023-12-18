@@ -6,6 +6,10 @@ import EditModal from './fragments/EditModal';
 import NavbarPaseador from './fragments/NavbarPaseador';
 import Footer from './fragments/Footer';
 
+import '../assets/css/Index_Dueno.css'
+import '../assets/styles/style.css';
+import '../assets/css/register.css'
+
 class InfoPaseador extends React.Component {
   constructor(props) {
     super(props);
@@ -188,8 +192,9 @@ class InfoPaseador extends React.Component {
       return <div>No se encontró información del paseador.</div>;
     }
     return (
-      <div>
-        <h2>Información del Paseador</h2>
+      <div className="text-center">
+
+        {/*
         <p>Nombre: {paseadorInfo.nombres}</p>
         <p>Apellidos: {paseadorInfo.apellidos}</p>
         <p>Categoría: {paseadorInfo.categoriaNombre}</p>
@@ -197,7 +202,81 @@ class InfoPaseador extends React.Component {
         <p>Experiencia: {paseadorInfo.experiencia}</p>
         <p>Tarifa: {paseadorInfo.tarifa}</p>
         <p>Saldo: {paseadorInfo.saldo}</p>
+        */}
+
+        <section className="mt-3">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="wrapper">
+              <div className="row no-gutters sombra">
+                <div className="col-md-12">
+                  <div className="contact-wrap w-100 p-md-5 p-4">
+                  <h2 className="mb-4">Información de {paseadorInfo.nombres}</h2>
+                    <form id="contactForm" name="contactForm" class="contactForm">
+                      <div className="row">
+
+                      <div className="col-md-11">
+                          <div className="form-group">
+                            <label className="label" htmlFor="direccion">Descripción</label>
+                            <textarea type="text" className="form-control" placeholder={paseadorInfo.descripcion} style={{ textAlign: 'left' }} disabled/>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div data-mdb-input-init className="form-group">
+                            <label className="label" htmlFor="nombres">Nombres</label>
+                            <input type="text" className="form-control" placeholder={paseadorInfo.nombres} style={{ textAlign: 'left' }} disabled/>
+                          </div>
+                        </div>
+
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label className="label" htmlFor="apellidos">Apellidos</label>
+                            <input type="text" className="form-control" placeholder={paseadorInfo.apellidos} style={{ textAlign: 'left' }} disabled/>
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="form-group">
+                            <label className="label" htmlFor="edad">Categoria</label>
+                            <input type="number" className="form-control" placeholder={paseadorInfo.categoriaNombre} style={{ textAlign: 'left' }} disabled/>
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="form-group">
+                            <label className="label" htmlFor="edad">Tarifa</label>
+                            <input type="number" className="form-control" placeholder={paseadorInfo.tarifa} style={{ textAlign: 'left' }} disabled/>
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="form-group">
+                            <label className="label" htmlFor="edad">Saldo</label>
+                            <input type="number" className="form-control" placeholder={paseadorInfo.saldo} style={{ textAlign: 'left' }} disabled/>
+                          </div>
+                        </div>
+                        <div className="col-md-11">
+                          <div className="form-group">
+                            <label className="label" htmlFor="direccion">Experiencia</label>
+                            <input type="text" className="form-control" placeholder={paseadorInfo.experiencia} style={{ textAlign: 'left' }} disabled/>
+                          </div>
+                        </div>
+                        <div className="col-md-12">
+                          <div className="form-group">
+                            <Button variant="primary" onClick={this.handleModalEditarCampos}>Editar Campos</Button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+      </div>
+
+      
     );
   }
 
@@ -299,10 +378,6 @@ class InfoPaseador extends React.Component {
       <React.Fragment>
         <NavbarPaseador></NavbarPaseador>
         {this.renderPaseadorInfo()}
-
-        <Button variant="primary" onClick={this.handleModalEditarCampos}>
-          Editar Campos
-        </Button>
 
         {/* Mostrar el modal de edición */}
         <EditModal

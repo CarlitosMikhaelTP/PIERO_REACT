@@ -23,9 +23,9 @@ const PropietariosList = () => {
   }, []);
 
 return (
-  <div className="d-flex flex-wrap">
+  <div className="d-flex flex-wrap" style={{width:'100%'}}>
       {propietarios.map(propietario => (
-        <Card key={propietario.id} style={{ width: '18rem', margin: '10px' }}>
+        <Card key={propietario.id} style={{ width: '100%', margin: '10px' }} className='sombra2'>
           
           <div className="fila2">
           <div className='calificacion'><i class="fa-solid fa-star"></i>{propietario.calificacion}</div>

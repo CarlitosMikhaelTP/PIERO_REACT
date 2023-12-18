@@ -160,24 +160,24 @@ handlePaseadoresClick = () => {
           <span className="fs-4">Tu Perfil</span>
         </a>
         <hr/>
+        <Link className="navbar-brand" to="/" style={{marginLeft: '10px'}}>
+	    	<a class="navbar-brand" href=""><i class="fa-solid fa-angle-left"></i> Página principal</a>
+          </Link>
+          <hr/>
         <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-            <a href="#" className="nav-link active" aria-current="page">
+            <a href="/index_dueno" className="nav-link active" aria-current="page">
             <i class="fa-solid fa-paw fa-flip" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
               Menu
             </a>
           </li>
           <li className="nav-item">
-            <a href="#" className="nav-link text-white" aria-current="page">
+            <a href="/infopropietario" className="nav-link text-white" aria-current="page">
             <i class="fa-solid fa-address-card" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
               Mi Información
             </a>
           </li>
         </ul>
-
-        <Link className="navbar-brand" to="/" style={{marginLeft: '10px'}}>
-	    	<a class="navbar-brand" href=""><i class="fa-solid fa-angle-left"></i> Página principal</a>
-          </Link>
       </div>
       <div className="">
 <div className="row" style={{width:'100%'}}>
@@ -204,7 +204,36 @@ handlePaseadoresClick = () => {
   <div className="container-fluid">
     <div className="row px-1">
 
-      <div className="col-md-9 text-center py-3">
+      <div className="col-md-9 py-3">
+      <div className="edit-section">
+          <h3>Editar Información</h3>
+          <Form>
+            <Form.Group controlId="formUbicacion">
+              <Form.Label>Ubicación</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingrese la ubicación"
+                name="ubicacion"
+                value={this.state.formData.ubicacion || ''} // Asegúrate de tener un valor por defecto ''
+                onChange={this.handleInputChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formDisponibilidad">
+              <Form.Check
+               type="checkbox"
+               label="Disponible"
+               name="disponibilidad"
+               checked={this.state.formData.disponibilidad}
+               onChange={this.handleInputChange}
+              />
+            </Form.Group>
+
+            <Button variant="primary" onClick={this.handleEditSubmit}>
+              Actualizar
+            </Button>
+          </Form>
+        </div>
         <img src={mapa1} alt="" style={{width:'100%'}}/>
       </div>
 
@@ -265,35 +294,8 @@ handlePaseadoresClick = () => {
 
     </div>
     {this.state.showModal && <ModalRegistroPropietario />}
-    <div className="edit-section">
-          <h3>Editar Información</h3>
-          <Form>
-            <Form.Group controlId="formUbicacion">
-              <Form.Label>Ubicación</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Ingrese la ubicación"
-                name="ubicacion"
-                value={this.state.formData.ubicacion || ''} // Asegúrate de tener un valor por defecto ''
-                onChange={this.handleInputChange}
-              />
-            </Form.Group>
 
-            <Form.Group controlId="formDisponibilidad">
-              <Form.Check
-               type="checkbox"
-               label="Disponible"
-               name="disponibilidad"
-               checked={this.state.formData.disponibilidad}
-               onChange={this.handleInputChange}
-              />
-            </Form.Group>
-
-            <Button variant="primary" onClick={this.handleEditSubmit}>
-              Actualizar
-            </Button>
-          </Form>
-        </div>
+        
         <Modal show={this.state.showSuccessModal} onHide={() => this.setState({ showSuccessModal: false })}>
           <Modal.Header closeButton>
             <Modal.Title>Actualización Exitosa</Modal.Title>
@@ -308,10 +310,6 @@ handlePaseadoresClick = () => {
           </Modal.Footer>
          </Modal>
 
-
-         <Button variant="primary" onClick={this.handleModalEditarCampos}>
-        Actualizar Información
-      </Button>
       <ModalActualizarPropietario
         show={this.state.showModalActualizarPropietarios}
         handleClose={this.handleCloseEditarCampos}
@@ -327,11 +325,6 @@ handlePaseadoresClick = () => {
       </div>
 
        {/* Agrega la llamada a la función renderPropietarioInfo() donde desees mostrar la información */}
-       <div>
-        {/* ... Otro contenido ... */}
-        {this.renderPropietarioInfo()}
-      </div>
-      {/* ... Otro contenido ... */}
 
     <Footer></Footer>
     </React.Fragment>

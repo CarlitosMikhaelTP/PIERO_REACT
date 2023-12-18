@@ -4,6 +4,7 @@ import '../assets/css/Login.css';
 import React from "react";
 import logo from '../assets/css/img/perro.png';
 import Carlitos from '../assets/css/img/Carlitos.jpeg';
+import Delvin from '../assets/css/img/delvin2.png';
 import spring from '../assets/css/img/spring.png';
 import kotlin from '../assets/css/img/kotlin.png';
 import react from '../assets/css/img/react.png';
@@ -63,7 +64,7 @@ class Nosotros extends React.Component {
 
           <div className="col-md-3">
             <div className="block-7">
-              <div className="img" style={{ backgroundImage: `url(${logo})` }}></div>
+              <div className="img" style={{ backgroundImage: `url(${Delvin})` }}></div>
               <div className="text-center p-4">
                 <span className="price">
                 <span className="texto5">DELVIN LAREZ</span>

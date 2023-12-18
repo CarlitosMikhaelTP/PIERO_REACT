@@ -26,6 +26,9 @@ import ModalRegistroPropietario from './components/fragments/ModalRegistroPropie
 import ModalActualizarPropietario from './components/fragments/ModalActualizarPropietario';
 import Modalll from './components/fragments/Modalll';
 import PaseadoresList from './components/fragments/PaseadoresList';
+import InfoPaseador from './components/InfoPaseador';
+import InfoPropietario from './components/InfoPropietario';
+import Mapa from './components/MapComponent';
 
 
 
@@ -58,6 +61,9 @@ function App() {
            <Route path='/paseadoresList' element={<PaseadoresList />} />
            <Route path='/modal' element={<Modalll/>} />
            <Route path='/buscador'></Route>
+           <Route path='/infopaseador' element={<InfoPaseador />} />
+           <Route path='/infopropietario' element={<InfoPropietario />} />
+           <Route path='/mapa' element={<Mapa />} />
         </Routes>
       </Router>
     </React.Fragment>

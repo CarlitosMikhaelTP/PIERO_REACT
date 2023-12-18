@@ -25,7 +25,7 @@ import iconoWsp from '../assets/css/img/iconoWsp.png';
 import iconoLinkedin from '../assets/css/img/iconoLinkedin.png';
 import iconoYoutube from '../assets/css/img/iconoYoutube.png';
 import iconoFace from '../assets/css/img/iconoFace.jpg';
-import IconoCelular from '../assets/css/img/celular.jpeg';
+import IconoCelular from '../assets/css/img/celular.png';
 import Navbar from "./fragments/Navbar";
 import NewNavbar from "./fragments/NewNavbar";
 import Footer from "./fragments/Footer"
@@ -335,7 +335,7 @@ class Dashboard extends React.Component {
   <div className="position-relative">
   <div className="text-white p-5 d-flex align-items-center banner-app">
   <div className="position-absolute">
-      <img src={IconoCelular} className="img-fluid" alt="" style={{ maxWidth:'50%' }}/>
+      <img src={IconoCelular} className="img-fluid" alt="" style={{ maxWidth:'42%' }}/>
     </div>
     <div className="col-md-12" id="mobile">
       <h1 style={{textAlign:'right'}}>Descarga la Aplicación de UyWalky</h1>

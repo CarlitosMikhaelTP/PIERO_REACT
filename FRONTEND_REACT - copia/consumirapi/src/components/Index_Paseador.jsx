@@ -351,7 +351,7 @@ class Index_Paseador extends React.Component {
             </a>
           </li>
           <li className="nav-item">
-            <a href="#" className="nav-link text-white" aria-current="page">
+            <a href="/infopaseador" className="nav-link text-white" aria-current="page">
             <i class="fa-solid fa-address-card" style={{marginLeft:'10px', marginRight:'10px', fontSize:'15px'}}></i>
               Mi Información
             </a>
