@@ -6,6 +6,7 @@ const EditModal = ({ show, handleClose, idPaseador }) => {
   const [idCategoria, setIdCategoria] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [experiencia, setExperiencia] = useState('');
+  const [foto, setFoto] = useState(null); 
 
   const handleIdCategoriaChange = (e) => {
     console.log('Valor seleccionado:', e.target.value);
@@ -21,6 +22,11 @@ const EditModal = ({ show, handleClose, idPaseador }) => {
     setExperiencia(e.target.value);
   };
 
+  const handleFotoChange = (e) => {
+    const file = e.target.files[0]; // Obtiene el archivo de la lista de archivos seleccionados
+    setFoto(file);
+  };
+
   const handleSubmit = async () => {
     const endpoint = `http://localhost:8080/api/v1/paseador/edit/${idPaseador}`;
     console.log('Datos a enviar al servidor:', { idCategoria, descripcion, experiencia });
@@ -31,7 +37,18 @@ const EditModal = ({ show, handleClose, idPaseador }) => {
         descripcion,
         experiencia,
       });
-  
+
+      if (foto) {
+        const fotoEndpoint = `http://localhost:8080/api/v1/paseador/${idPaseador}/foto`;
+        const formData = new FormData();
+        formData.append('foto', foto);
+        await axios.post(fotoEndpoint, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+      }
+
       handleClose(); // Cerrar el modal después de la actualización exitosa
     } catch (error) {
       console.error('Error al actualizar:', error);
@@ -70,6 +87,10 @@ const EditModal = ({ show, handleClose, idPaseador }) => {
               placeholder="Ingrese la experiencia"
               onChange={handleExperienciaChange}
             />
+          </Form.Group>
+          <Form.Group controlId="foto">
+            <Form.Label>Selecciona una foto</Form.Label>
+            <Form.Control type="file" onChange={handleFotoChange} accept="image/*" />
           </Form.Group>
         </Form>
       </Modal.Body>

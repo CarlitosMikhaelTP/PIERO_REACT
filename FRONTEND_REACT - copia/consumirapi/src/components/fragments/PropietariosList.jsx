@@ -34,6 +34,15 @@ return (
               <br />
               <span className="fw-bold">Ubicación:</span> {propietario.ubicacion}
               <br />
+              {propietario.foto && (
+                <div>
+                  <p>Foto:</p>
+                  <img src={`http://localhost:8080/api/v1/propietario/foto/${propietario.idPropietario}`} 
+                  alt="Foto del propietario" 
+                  style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover' }}/>
+                </div>
+              )}
+              <br/>
               <span className="fw-bold">Comentario:</span> {propietario.comentario}
               <br />
               <span className="fw-bold">Preferencias de Paseo:</span> {propietario.preferenciasPaseo}

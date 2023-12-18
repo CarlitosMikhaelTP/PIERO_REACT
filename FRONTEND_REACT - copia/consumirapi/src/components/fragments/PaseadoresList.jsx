@@ -32,6 +32,15 @@ return (
               <br />
               <span className="fw-bold">Calificación:</span> {paseador.calificacion}
               <br />
+              {paseador.foto && (
+                <div>
+                  <p>Foto:</p>
+                  <img src={`http://localhost:8080/api/v1/paseador/foto/${paseador.idPaseador}`} 
+                  alt="Foto del paseador" 
+                  style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover' }}/>
+                </div>
+              )}
+              <br/>
               <span className="fw-bold">Descripcion:</span> {paseador.descripcion}
               <br />
               <span className="fw-bold">Experiencia:</span> {paseador.experiencia}

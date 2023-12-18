@@ -6,6 +6,7 @@ const ModalActualizarPropietario = ({ show, handleClose, idPropietario }) => {
   const [comentario, setComentario] = useState('');
   const [preferenciasPaseo, setPreferenciasPaseo] = useState('');
   const [saldo, setSaldo] = useState('');
+  const [foto, setFoto] = useState(null); 
 
   const handleComentarioChange = (e) => {
     setComentario(e.target.value);
@@ -19,6 +20,12 @@ const ModalActualizarPropietario = ({ show, handleClose, idPropietario }) => {
     setSaldo(e.target.value);
   };
 
+  const handleFotoChange = (e) => {
+    const file = e.target.files[0]; // Obtiene el archivo de la lista de archivos seleccionados
+    setFoto(file);
+  };
+
+
   const handleSubmit = async () => {
     const endpoint = `http://localhost:8080/api/v1/propietario/edit/${idPropietario}`;
     console.log('Datos a enviar al servidor:', { comentario, preferenciasPaseo, saldo });
@@ -29,6 +36,19 @@ const ModalActualizarPropietario = ({ show, handleClose, idPropietario }) => {
         preferenciasPaseo,
         saldo,
       });
+
+      if (foto) {
+        const fotoEndpoint = `http://localhost:8080/api/v1/propietario/${idPropietario}/foto`;
+        const formData = new FormData();
+        formData.append('foto', foto);
+        await axios.post(fotoEndpoint, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+      }
+
+
   
       handleClose(); // Cerrar el modal después de la actualización exitosa
     } catch (error) {
@@ -68,6 +88,10 @@ const ModalActualizarPropietario = ({ show, handleClose, idPropietario }) => {
               placeholder="Ingrese su nuevo saldo"
               onChange={handleSaldoChange}
             />
+          </Form.Group>
+          <Form.Group controlId="foto">
+            <Form.Label>Selecciona una foto</Form.Label>
+            <Form.Control type="file" onChange={handleFotoChange} accept="image/*" />
           </Form.Group>
         </Form>
       </Modal.Body>

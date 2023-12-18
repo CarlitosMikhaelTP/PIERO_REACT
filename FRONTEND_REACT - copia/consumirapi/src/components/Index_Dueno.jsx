@@ -139,8 +139,17 @@ handlePaseadoresClick = () => {
         <p>Preferencias de paseo: {propietarioInfo.preferenciasPaseo}</p>
        {/* <p>Calificación: {propietarioInfo.calificacion}</p> */} 
         <p>Comentario: {propietarioInfo.comentario}</p>
-        {/* Otros detalles del propietario */}
-      </div>
+        {/* Mostrar la foto del propietario si existe */}
+      {propietarioInfo.foto && (
+        <div>
+          <p>Foto:</p>
+          <img src={`http://localhost:8080/api/v1/propietario/foto/${propietarioInfo.idPropietario}`} 
+          alt="Foto del propietario" 
+          style={{ maxWidth: '100%', maxHeight: '400px', objectFit: 'cover' }}/>
+        </div>
+      )}
+      {/* Otros detalles del propietario */}
+    </div>
     );
   }
   

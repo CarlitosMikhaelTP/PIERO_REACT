@@ -234,6 +234,14 @@ class Index_Paseador extends React.Component {
         <p>Categoría: {paseadorInfo.categoriaNombre}</p>
         <p>Descripción: {paseadorInfo.descripcion}</p>
         <p>Experiencia: {paseadorInfo.experiencia}</p>
+        {paseadorInfo.foto && (
+        <div>
+            <p>Foto:</p>
+            <img src={`http://localhost:8080/api/v1/paseador/foto/${paseadorInfo.idPaseador}`} 
+            alt="Foto del paseador" 
+            style={{ maxWidth: '100%', maxHeight: '400px', objectFit: 'cover' }}/>
+          </div>
+        )}
         <p>Tarifa: {paseadorInfo.tarifa}</p>
         <p>Saldo: {paseadorInfo.saldo}</p>
         {/* Mostrar otros detalles del paseador según la estructura de la respuesta */}
